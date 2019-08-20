@@ -1,4 +1,4 @@
-class Restuarant < ActiveRecord::Base
+class Restaurant < ActiveRecord::Base
   belongs_to :user
   validates :name, presence: true
 end

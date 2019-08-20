@@ -1,42 +1,42 @@
 class RestaurantsController < ApplicationController
- get '/cafes' do
-    @cafes = Cafe.all
+ get '/restaurants' do
+    @restaurants = Restaurant.all
     erb :index
   end
 
-     get '/cafes/new' do
-        erb :'cafes/new'
+     get '/restaurants/new' do
+        erb :'restaurants/new'
     end
 
-    post '/cafes' do
-    @cafe = Cafe.create(params)
-    redirect '/cafes/#{@cafe.id}'
+    post '/restaurants' do
+    @restaurant = Restaurant.create(params)
+    redirect '/restaurants/#{@restaurant.id}'
     end 
 
 
-    get '/cafes/:id' do
-    @cafe = Cafe.find(params[:id])
-    erb :'cafes/show'
+    get '/restaurants/:id' do
+    @restaurant = Restaurant.find(params[:id])
+    erb :'restaurants/show'
   end 
   
-    get '/cafes/:id/edit' do 
-        @cafe = Cafe.find(params[:id])
+    get '/restaurants/:id/edit' do 
+        @restaurant = Restaurant.find(params[:id])
         erb :edit
     end 
 
 
- patch '/cafes/:id' do 
-        @cafe = Cafe.find(params[:id])
-        @cafe.name = params[:name]
-        @cafe.location = params[:location]
-        @cafe.wifi_avaliable = params[:wifi_avaliable]
-        @cafe.save
-        redirect '/cafes'
+ patch '/restaurants/:id' do 
+        @restaurant = Restaurant.find(params[:id])
+        @restaurant.name = params[:name]
+        @restaurant.location = params[:location]
+        @restaurant.wifi_avaliable = params[:wifi_avaliable]
+        @restaurant.save
+        redirect '/restaurants'
     end 
 
-    delete '/cafes/:id' do 
-        Cafe.destroy(params[:id])
-        redirect '/cafes'
+    delete '/restaurants/:id' do 
+        Restaurant.destroy(params[:id])
+        redirect '/restaurants'
     end 
 
     
