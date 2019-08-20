@@ -1,5 +1,4 @@
-
-class CafeController < ApplicationController
+class RestaurantsController < ApplicationController
  get '/cafes' do
     @cafes = Cafe.all
     erb :index
