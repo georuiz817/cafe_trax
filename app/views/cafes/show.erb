@@ -1,0 +1,14 @@
+<html>
+  <body>
+    <h1><%= @cafe.name %></h1>
+    <p><%= @cafe.location %></p>
+    <p><%= @cafe.wifi_avaliable %></p>
+    
+    <form method="POST" action="/cafes/<%= @cafe.id %>">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      
+      <input type="submit" value="delete">
+    
+    </form>
+  </body>
+</html>
