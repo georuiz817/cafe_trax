@@ -17,7 +17,7 @@ class CafeController < ApplicationController
 
     get '/cafes/:id' do
     @cafe = Cafe.find(params[:id])
-    erb :show
+    erb :'cafes/show'
   end 
   
     get '/cafes/:id/edit' do 
