@@ -1,10 +1,10 @@
 <html>
   <body>
-    <h1><%= @cafe.name %></h1>
-    <p><%= @cafe.location %></p>
-    <p><%= @cafe.wifi_avaliable %></p>
+    <h1><%= @restaurant.name %></h1>
+    <p><%= @restaurant.location %></p>
+    <p><%= @restaurant.wifi_avaliable %></p>
     
-    <form method="POST" action="/cafes/<%= @cafe.id %>">
+    <form method="POST" action="/restaurants/<%= @restaurant.id %>">
       <input id="hidden" type="hidden" name="_method" value="delete">
       
       <input type="submit" value="delete">

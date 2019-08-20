@@ -2,19 +2,19 @@
 <html>
 
 <body>
-	<h1> - Use this page to edit the Cafe of your choice -</h1>
+	<h1> - Use this page to edit the Restaurant of your choice -</h1>
 	
-	<form method="POST" action="/cafes/<%= @cafe.id %>">
+	<form method="POST" action="/restaurants/<%= @restaurant.id %>">
 		<input type="hidden" value="patch" name="_method">
 		
 		<label for "name">Name:</label>
-		<input type="text" id="name" value="<%= @cafe.name %>" name="name">
+		<input type="text" id="name" value="<%= @restaurant.name %>" name="name">
 		
 		<label for "location">Location:</label>
-		<input type="text" id="location" value="<% @cafe.location %>" name="location">
+		<input type="text" id="location" value="<% @restaurant.location %>" name="location">
 		
 		<label for "wifi_avaliable">Wifi_Avaliable:</label>
-		<input type="text" id="" value="<% @cafe.wifi_avaliable %>" name="wifi_avaliable">
+		<input type="text" id="" value="<% @restaurant.wifi_avaliable %>" name="wifi_avaliable">
 		
 		<input type="submit" id="submit" value="Submit">
 	
