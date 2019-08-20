@@ -13,13 +13,13 @@ class CafeController < ApplicationController
     @cafe = Cafe.create(params)
     redirect '/cafes/#{@cafe.id}'
     end 
-   
+
 
     get '/cafes/:id' do
     @cafe = Cafe.find(params[:id])
     erb :show
   end 
-
+  
     get '/cafes/:id/edit' do 
         @cafe = Cafe.find(params[:id])
         erb :edit
@@ -30,7 +30,7 @@ class CafeController < ApplicationController
         @cafe = Cafe.find(params[:id])
         @cafe.name = params[:name]
         @cafe.location = params[:location]
-        @cafe.wifi_avaliable = params [:wifi_avaliable]
+        @cafe.wifi_avaliable = params[:wifi_avaliable]
         @cafe.save
         redirect '/cafes'
     end 
