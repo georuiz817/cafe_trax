@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
  get '/restaurants' do
-   @restaurants = Restaurant.all 
+   @restaurants = Restaurant.all
    erb :'restaurants/index'
   end
 
@@ -39,9 +39,8 @@ class RestaurantsController < ApplicationController
         redirect '/'
     end 
     
-    private
-    def restaurant_params
-        {name: params[:name], location: params[:location], wifi_avaliable: params[:wifi_avaliable],user_id: current_user.id}
-    end 
-   
+    
+    
+    
+  
  end
