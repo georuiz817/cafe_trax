@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
  get '/restaurants' do
-   @restaurants = Restaurant.all
+   @restaurants = current_user.restaurant.all
    erb :'restaurants/index'
   end
 
@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
     end
 
     post '/restaurants' do
-    @restaurant = Restaurant.create(params)
+    @restaurant = current_user.restaurants.create(params)
     redirect "restaurants/#{@restaurant.id}"
     end 
 
