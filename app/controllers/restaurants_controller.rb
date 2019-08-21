@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
  get '/restaurants' do
-   @restaurants = Restaurant.all 
+   @restaurants = current_user.Restaurant.all 
    erb :'restaurants/index'
   end
 
@@ -15,18 +15,18 @@ class RestaurantsController < ApplicationController
 
 
     get '/restaurants/:id' do
-    @restaurant = Restaurant.find(params[:id])
+    @restaurant = Restaurant.find_by_id(params[:id])
     erb :'restaurants/show'
   end 
   
   get '/restaurants/:id/edit' do 
-        @restaurant = Restaurant.find(params[:id])
+        @restaurant = Restaurant.find_by_id(params[:id])
         erb :'restaurants/edit'
     end 
 
 
  patch '/restaurants/:id' do 
-        @restaurant = Restaurant.find(params[:id])
+        @restaurant = Restaurant.find_by_id(params[:id])
         @restaurant.name = params[:name]
         @restaurant.location = params[:location]
         @restaurant.wifi_avaliable = params[:wifi_avaliable]
@@ -35,9 +35,13 @@ class RestaurantsController < ApplicationController
     end 
 
     delete '/restaurants/:id' do 
-        Restaurant.destroy(params[:id])
+        Restaurant.destroy(params[:user_id])
         redirect '/'
     end 
-
+    
+    private
+    def restaurant_params
+        {name: params[:name], location: params[:location], wifi_avaliable: params[:wifi_avaliable],user_id: current_user.id}
+    end 
    
  end

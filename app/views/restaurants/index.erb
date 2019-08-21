@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>  
   <body>    
-    <h1>Restaurants</h1>    
+    <h1>Restaurants</h1>
+    <h1>name - location - wifi_avaliable</h1>
     <% @restaurants.each do |restaurant| %>      
-    <%= restaurant.name %>      
-    <%= restaurant.location %>      
-    <%= restaurant.wifi_avaliable %>    
+    <%= restaurant.name %>      <br>
+    <%= restaurant.location %>  <br>  
+    <%= restaurant.wifi_avaliable %>   <br> 
+     <a href="/restaurants/<%= restaurant.id%>/edit"
     <% end %> 
     
     <p></p><a href="/">home page</a></p> 
-    
+    <a href="/material/<%= material.id%>/edit"
   </body>
 </html>
