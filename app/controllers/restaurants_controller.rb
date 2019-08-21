@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
  get '/restaurants' do
-    @restaurants = Restaurant.all
-    erb :'restaurants/index'
+   @restaurants = Restaurant.all 
+   erb :'restaurants/index'
   end
 
      get '/restaurants/new' do
@@ -10,7 +10,7 @@ class RestaurantsController < ApplicationController
 
     post '/restaurants' do
     @restaurant = Restaurant.create(params)
-    redirect "/restaurants/#{@restaurant.id}"
+    redirect "restaurants/#{@restaurant.id}"
     end 
 
 
@@ -19,7 +19,7 @@ class RestaurantsController < ApplicationController
     erb :'restaurants/show'
   end 
   
-    get '/restaurants/:id/edit' do 
+  get '/restaurants/:id/edit' do 
         @restaurant = Restaurant.find(params[:id])
         erb :'restaurants/edit'
     end 
@@ -39,6 +39,5 @@ class RestaurantsController < ApplicationController
         redirect '/'
     end 
 
-    
-
-  end 
+   
+ end
