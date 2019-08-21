@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
  get '/restaurants' do
-   @restaurants = current_user.restaurant.all
+   @restaurants = current_user.restaurants.all
    erb :'restaurants/index'
   end
 
