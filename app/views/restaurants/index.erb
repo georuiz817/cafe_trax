@@ -6,8 +6,7 @@
    <p>Name: <%= restaurant.name %></p>
    <p>Location: <%= restaurant.location %></p> 
    <p>Wifi_Avaliable:<%= restaurant.wifi_avaliable %></p>
-   <%= link_to 'Edit', edit_restaurant_path(restaurant) %>
-
+   <a href="/restaurants/<%= restaurant.id%>/edit">Edit</a>
    <br>
     <% end %> 
     
