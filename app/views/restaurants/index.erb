@@ -4,9 +4,9 @@
     <h1>Restaurants</h1>
     <h1>name - location - wifi_avaliable</h1>
     <% @restaurants.each do |restaurant| %>      
-    <%= restaurant.name %>      <br>
-    <%= restaurant.location %>  <br>  
-    <%= restaurant.wifi_avaliable %>   <br> 
+   <p>Name: <%= restaurant.name %></p><br>
+   <p>Location: <%= restaurant.location %></p><br>  
+    <p>Wifi_Avaliable:<%= restaurant.wifi_avaliable %></p><br> 
      <a href="/restaurants/<%= restaurant.id%>/edit"
     <% end %> 
     
