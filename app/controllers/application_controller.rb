@@ -37,7 +37,7 @@ class ApplicationController < Sinatra::Base
         user = User.find_by(email: params[:email])
         if user.authenticate(params[:password])
             session[:user_id] = user.id 
-            redirect '/' #"/users/#{@user.id}"
+            redirect '/' 
         else
             erb :'users/signup'
         end
