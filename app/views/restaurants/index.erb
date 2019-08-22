@@ -2,15 +2,17 @@
 <html>  
   <body>    
     <h1>Restaurants</h1>
-    <h1>name - location - wifi_avaliable</h1>
-    <% @restaurants.each do |restaurant| %>      
-   <p>Name: <%= restaurant.name %></p><br>
-   <p>Location: <%= restaurant.location %></p><br>  
-    <p>Wifi_Avaliable:<%= restaurant.wifi_avaliable %></p><br> 
-     <a href="/restaurants/<%= restaurant.id%>/edit"
+   <% @restaurants.each do |restaurant| %>       
+   <p>Name: <%= restaurant.name %></p>
+   <p>Location: <%= restaurant.location %></p> 
+   <p>Wifi_Avaliable:<%= restaurant.wifi_avaliable %></p>
+   <%= link_to 'Edit', edit_restaurant_path(restaurant) %>
+
+   <br>
     <% end %> 
     
     <p></p><a href="/">home page</a></p> 
     
   </body>
 </html>
+
