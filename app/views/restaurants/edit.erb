@@ -19,6 +19,13 @@
 		<input type="submit" id="submit" value="Submit">
 	
 	</form>
+	<br>    
+	 <form method="POST" action="/restaurants/<%= @restaurant.id %>">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      
+      <input type="submit" value="delete">
+      </form>
+      
 	<p></p><a href="/">home page</a></p> 
 </body>
 </html>

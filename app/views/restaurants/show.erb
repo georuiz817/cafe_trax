@@ -1,8 +1,8 @@
 <html>
   <body>
-    <h1><%= @restaurant.name %></h1>
-    <p><%= @restaurant.location %></p>
-    <p><%= @restaurant.wifi_avaliable %></p>
+    <p>Name: <%= @restaurant.name %><p></p>
+    <p>Location: <%= @restaurant.location %></p>
+    <p>Wifi_Avaliable: <%= @restaurant.wifi_avaliable %></p>
     
     <form method="POST" action="/restaurants/<%= @restaurant.id %>">
       <input id="hidden" type="hidden" name="_method" value="delete">

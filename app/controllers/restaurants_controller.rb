@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
     end
 
     post '/restaurants' do
-    @restaurant = current_user.restaurants.create(params)
+    @restaurant = current_user.restaurants.create(name: params["name"],location: params["location"], wifi_avaliable: params["wifi_avaliable"])
     redirect "restaurants/#{@restaurant.id}"
     end 
 
@@ -34,12 +34,12 @@ class RestaurantsController < ApplicationController
         redirect '/restaurants'
     end 
 
+    
     delete '/restaurants/:id' do 
-        Restaurant.destroy(params[:user_id])
-        redirect '/'
+        @restaurant = Restaurant.find_by_id(params[:id])
+        @restaurant.delete
+        redirect '/restaurants'
     end 
-    
-    
     
     
   
