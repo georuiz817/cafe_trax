@@ -19,9 +19,14 @@ class RestaurantsController < ApplicationController
     erb :'restaurants/show'
   end 
   
-  get '/restaurants/:id/edit' do 
+  get '/restaurants/:id/edit' do
+   
         @restaurant = Restaurant.find_by_id(params[:id])
+        if current_user.id == @restaurant.user_id
         erb :'restaurants/edit'
+      else 
+      redirect "/"
+    end
     end 
 
 
