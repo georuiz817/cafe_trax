@@ -4,15 +4,6 @@
     <p>Location: <%= @restaurant.location %></p>
     <p>Wifi_Avaliable: <%= @restaurant.wifi_avaliable %></p>
     
-    <form method="POST" action="/restaurants/<%= @restaurant.id %>">
-      <input id="hidden" type="hidden" name="_method" value="delete">
-      
-      <input type="submit" value="delete">
-    
-    
-    
-    </form>
-    
     <p><a href="/">home page</a></p> 
     
 </body>
