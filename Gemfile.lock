@@ -1,9 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    actionmailer (0.6.1)
-      actionpack (>= 0.9.5)
-    actionpack (1.4.0)
     activemodel (4.2.11.1)
       activesupport (= 4.2.11.1)
       builder (~> 3.1)
@@ -39,11 +36,6 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
-    rails (0.9.5)
-      actionmailer (>= 0.6.1)
-      actionpack (>= 1.4.0)
-      activerecord (>= 1.6.0)
-      rake (>= 0.4.15)
     rake (12.3.3)
     require_all (2.0.0)
     ripl (0.7.1)
@@ -87,7 +79,6 @@ DEPENDENCIES
   bcrypt
   pry
   rack-flash3
-  rails
   rake
   require_all
   shotgun
